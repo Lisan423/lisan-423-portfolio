@@ -1,19 +1,298 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a0b12">
-<meta name="description" content="Lisan 423 — personal developer portfolio and project showcase."><title>Lisan 423 — Developer Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071b2b">
+<meta name="description" content="Explore dinosaurs, fossils and prehistoric life with Explore WonderSpace.">
+<title>Explore WonderSpace | Made by Lisan Sarkar</title>
 <style>
-:root{--bg:#0a0b12;--panel:#111522;--panel2:#171c2d;--text:#f6f7fb;--muted:#a5abc0;--line:#272d42;--a:#7c8cff;--b:#54e1c1;--glow:rgba(124,140,255,.24)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#23234c 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1120px,92%);margin:auto}.top{position:sticky;top:0;z-index:10;background:rgba(10,11,18,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:850;letter-spacing:-.04em;font-size:1.13rem}.logo i{font-style:normal;color:var(--b)}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:var(--b)}.controls{display:flex;gap:9px;align-items:center}.iconbtn{border:1px solid var(--line);color:var(--text);background:var(--panel);border-radius:12px;padding:8px 11px;cursor:pointer}.hero{min-height:610px;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:65px 0 70px}.pill{display:inline-flex;gap:9px;align-items:center;border:1px solid var(--line);border-radius:99px;padding:7px 12px;color:var(--muted);font-size:.82rem}.dot{width:8px;height:8px;border-radius:50%;background:var(--b);box-shadow:0 0 12px var(--b)}h1{font-size:clamp(3rem,7vw,5.5rem);line-height:.98;letter-spacing:-.075em;margin:23px 0}h1 span{background:linear-gradient(100deg,var(--a),var(--b));background-clip:text;color:transparent}.lead{font-size:1.1rem;color:var(--muted);max-width:570px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:13px;border:1px solid var(--line);font-weight:750;transition:transform .2s}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(110deg,var(--a),#8e9cff);border-color:transparent;color:#080a13}.visual{min-height:390px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,rgba(124,140,255,.13),rgba(84,225,193,.06)),var(--panel);display:grid;place-items:center;position:relative;overflow:hidden}.visual:before,.visual:after{content:"";position:absolute;border:1px solid rgba(124,140,255,.25);border-radius:50%;width:330px;height:330px}.visual:after{width:440px;height:440px;border-color:rgba(84,225,193,.16)}.core{width:190px;height:190px;z-index:1;border-radius:42px;transform:rotate(-8deg);background:linear-gradient(140deg,#818cff,#54e1c1);box-shadow:0 25px 100px var(--glow);display:grid;place-items:center;color:#0a0b12;font-size:4rem;font-weight:900}.float{position:absolute;z-index:2;border:1px solid var(--line);background:rgba(17,21,34,.92);border-radius:14px;padding:10px 13px;font-size:.85rem;box-shadow:0 10px 35px #0003}.f1{top:17%;left:7%}.f2{top:24%;right:7%}.f3{bottom:15%;left:14%}.f4{bottom:17%;right:9%}.section{padding:68px 0}.head{max-width:680px;margin-bottom:28px}.eyebrow{font-size:.77rem;font-weight:850;letter-spacing:.16em;color:var(--b);text-transform:uppercase}.head h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.1;letter-spacing:-.05em;margin:9px 0}.head p{color:var(--muted);margin:0}.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.skill{background:var(--panel);border:1px solid var(--line);padding:17px;border-radius:16px}.skill b{display:block}.skill span{font-size:.84rem;color:var(--muted)}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.project{background:linear-gradient(150deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:21px;padding:21px;min-height:240px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}.project:hover{transform:translateY(-5px);border-color:#6978d9}.projecttop{display:flex;justify-content:space-between;align-items:center}.projecticon{height:48px;width:48px;border-radius:14px;background:linear-gradient(140deg,rgba(124,140,255,.25),rgba(84,225,193,.17));display:grid;place-items:center;font-size:1.5rem}.project h3{margin:19px 0 5px}.project p{color:var(--muted);font-size:.94rem;margin:0 0 18px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}.tag{font-size:.75rem;color:var(--b);border:1px solid var(--line);border-radius:7px;padding:3px 8px}.aboutbox{display:grid;grid-template-columns:1fr 1fr;gap:25px;background:var(--panel);border:1px solid var(--line);padding:28px;border-radius:24px}.aboutbox p{color:var(--muted)}.statrow{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{background:var(--panel2);border:1px solid var(--line);border-radius:15px;padding:17px}.stat strong{display:block;font-size:1.5rem}.stat span{color:var(--muted);font-size:.85rem}.contact{border:1px solid var(--line);border-radius:24px;padding:30px;background:linear-gradient(120deg,rgba(124,140,255,.12),rgba(84,225,193,.08))}.contact h2{margin:5px 0;font-size:2rem;letter-spacing:-.04em}.contact p{color:var(--muted)}footer{border-top:1px solid var(--line);margin-top:35px;padding:26px 0;color:var(--muted);text-align:center}footer strong{display:block;color:var(--text);margin-top:4px}.light{--bg:#f4f6fc;--panel:#fff;--panel2:#edf0fa;--text:#17192a;--muted:#5f667e;--line:#dfe3ef;--glow:rgba(124,140,255,.2)}.light .top{background:rgba(244,246,252,.84)}.light .float{background:rgba(255,255,255,.92)}.light .primary{color:#080a13}
-@media(max-width:800px){.navlinks{gap:12px;font-size:.83rem}.hero{grid-template-columns:1fr;gap:28px;padding-top:48px;min-height:auto}.visual{min-height:330px}.skills{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}.aboutbox{grid-template-columns:1fr}.section{padding:48px 0}}@media(max-width:460px){.navlinks{gap:9px}.navlinks a:nth-child(3){display:none}.logo{font-size:.98rem}.controls{gap:5px}.visual{min-height:285px}.core{width:145px;height:145px;font-size:3rem}.float{font-size:.74rem;padding:8px 9px}}
-</style></head>
-<body><div class="top"><nav class="wrap"><a class="logo" href="#home"><i>✦</i> LISAN<span style="color:var(--b)">423</span></a><div class="navlinks"><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div><div class="controls"><button class="iconbtn" id="theme" aria-label="Toggle light and dark theme">☼</button></div></nav></div>
-<main id="home"><section class="wrap hero"><div><div class="pill"><span class="dot"></span> Learning · Building · Improving</div><h1>Hey, I'm<br><span>Lisan Sarkar.</span></h1><p class="lead">A curious beginner in web development, exploring how thoughtful design and clean code can turn ideas into useful digital experiences.</p><div class="actions"><a class="btn primary" href="#projects">Explore my projects ↗</a><a class="btn" href="#about">More about me ↓</a></div><p style="font-size:.86rem;color:var(--muted)">Currently learning HTML, CSS and JavaScript.</p></div><div class="visual" aria-label="Abstract portfolio illustration"><div class="core">L<span style="font-size:.6em">.</span></div><div class="float f1">⌘ Web development</div><div class="float f2">✦ Creative ideas</div><div class="float f3">&lt;/&gt; Clean code</div><div class="float f4">↗ Keep learning</div></div></section>
-<section class="wrap section" id="skills"><div class="head"><div class="eyebrow">What I'm learning</div><h2>My toolkit, one step at a time.</h2><p>A growing collection of skills as I build and experiment with the web.</p></div><div class="skills"><div class="skill"><b>🌐 HTML</b><span>Structure & accessibility</span></div><div class="skill"><b>🎨 CSS</b><span>Layouts & visual design</span></div><div class="skill"><b>⚡ JavaScript</b><span>Interactivity & logic</span></div><div class="skill"><b>🐙 GitHub</b><span>Version control basics</span></div></div></section>
-<section class="wrap section" id="projects"><div class="head"><div class="eyebrow">Selected work</div><h2>Small projects. Big learning.</h2><p>Example project cards to customize as your real projects are published.</p></div><div class="projects"><article class="project"><div class="projecttop"><div class="projecticon">🪐</div><span class="tag">01 / EDUCATION</span></div><h3>Explore WonderSpace</h3><p>An educational concept exploring dinosaurs, prehistoric life and the history of our planet.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Learning</span></div></article><article class="project"><div class="projecttop"><div class="projecticon">🔬</div><span class="tag">02 / SCIENCE</span></div><h3>Educational Galaxy</h3><p>A science learning concept covering human evolution, space and discoveries.</p><div class="tags"><span class="tag">Education</span><span class="tag">Responsive</span></div></article><article class="project"><div class="projecttop"><div class="projecticon">🏛️</div><span class="tag">03 / HISTORY</span></div><h3>History Chronicle</h3><p>A visual journey through ancient civilizations, landmarks and historical stories.</p><div class="tags"><span class="tag">History</span><span class="tag">Research</span></div></article></div></section>
-<section class="wrap section" id="about"><div class="head"><div class="eyebrow">A little about me</div><h2>Curiosity is my starting point.</h2></div><div class="aboutbox"><div><h3>Learning by making</h3><p>I'm building my skills through small projects, testing ideas, and improving each version. This portfolio is a home for the things I learn and create along the way.</p><p>My goal is to keep learning, make websites that are easy to use, and grow one project at a time.</p></div><div class="statrow"><div class="stat"><strong>01</strong><span>Stay curious</span></div><div class="stat"><strong>02</strong><span>Build consistently</span></div><div class="stat"><strong>03</strong><span>Learn from feedback</span></div><div class="stat"><strong>04</strong><span>Keep improving</span></div></div></div></section>
-<section class="wrap section" id="contact"><div class="contact"><div class="eyebrow">Let's connect</div><h2>Have an idea to build?</h2><p>Find my code and future projects on GitHub.</p><a class="btn primary" href="https://github.com/lisan423" target="_blank" rel="noopener noreferrer">Visit GitHub ↗</a></div></section></main>
-<footer><div class="wrap">© 2026 Lisan 423 · Personal Developer Portfolio<strong>Made by Lisan Sarkar</strong></div></footer>
-<script>const btn=document.getElementById('theme');btn.addEventListener('click',()=>{document.body.classList.toggle('light');btn.textContent=document.body.classList.contains('light')?'☾':'☼';});</script>
-</body></html>
+:root{--bg:#071b2b;--panel:#102b3d;--text:#f1f8fa;--muted:#b4c8d2;--teal:#5eead4;--gold:#ffd166}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#071b2bf2;border-bottom:1px solid #ffffff20}
+.nav{min-height:72px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.brand{font-size:18px;font-weight:900}
+.brand span{color:var(--teal)}
+.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted)}
+.links{display:flex;gap:20px;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--teal)}
+.menu{display:none;background:transparent;color:white;border:1px solid #ffffff30;border-radius:8px;padding:8px}
+.hero{padding:70px 0;background:radial-gradient(ellipse at 80% 20%,#174d5a,transparent 45%),linear-gradient(135deg,#071b2b,#103748)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.eyebrow,.kicker,.tag{color:var(--teal);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800}
+h1{font-size:clamp(38px,6vw,66px);line-height:1.1;letter-spacing:-2px;margin:15px 0}
+h1 span{color:var(--teal)}
+.lead{font-size:17px;color:var(--muted);max-width:570px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;padding:12px 18px;border:1px solid #ffffff30;border-radius:10px;font-weight:bold}
+.primary{background:var(--teal);color:#06212b;border-color:var(--teal)}
+.hero-img{width:100%;height:340px;object-fit:cover;border-radius:22px;border:1px solid #ffffff25}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.stat{border-left:2px solid var(--teal);padding-left:12px}
+.stat strong{display:block;font-size:22px}
+.stat span{font-size:12px;color:var(--muted)}
+section{padding:65px 0}
+.section-head{max-width:700px;margin-bottom:28px}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.2;margin:10px 0}
+.muted,.section-head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid #ffffff18;border-radius:16px;overflow:hidden;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#5eead477}
+.card img{width:100%;height:200px;object-fit:cover;display:block;background:#15384a}
+.card-body{padding:18px}
+.tag{font-size:10px;letter-spacing:1px}
+h3{margin:8px 0}
+.card p,.fact p{color:var(--muted);font-size:14px}
+.read{display:inline-block;margin-top:10px;color:var(--gold);font-weight:bold;font-size:13px}
+.feature{background:linear-gradient(120deg,#103345,#0a2435);border-top:1px solid #ffffff15;border-bottom:1px solid #ffffff15}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.feature-img{width:100%;height:320px;object-fit:cover;border-radius:18px}
+.points{padding-left:20px;color:var(--muted)}
+.points li{margin:10px 0}
+.timeline{border-left:2px solid #2b6370;margin:25px 0 0 8px;padding-left:24px}
+.event{position:relative;padding-bottom:22px}
+.event:before{content:"";position:absolute;left:-31px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--teal)}
+.event strong{color:var(--gold)}
+.event p{color:var(--muted);margin:5px 0}
+.fact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.fact{background:var(--panel);border:1px solid #ffffff18;border-radius:14px;padding:20px}
+.fact b{color:var(--teal)}
+.quiz{max-width:760px;background:var(--panel);padding:24px;border:1px solid #ffffff20;border-radius:18px}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.answers button{background:#15384a;color:white;border:1px solid #ffffff20;border-radius:9px;padding:12px;text-align:left;cursor:pointer}
+.answers button:hover{border-color:var(--teal)}
+.answers button:disabled{opacity:.8}
+#result{color:var(--teal);font-weight:bold;min-height:30px}
+footer{padding:30px 0;border-top:1px solid #ffffff20;background:#051521}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+footer p{font-size:13px;color:var(--muted)}
+footer strong{color:var(--teal)}
+.top{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border:0;border-radius:50%;background:var(--teal);font-size:21px;cursor:pointer}
+@media(max-width:760px){
+.menu{display:block}
+.links{display:none;position:absolute;top:72px;left:0;right:0;background:#071b2b;padding:18px 5%;flex-direction:column}
+.links.open{display:flex}
+.hero{padding:48px 0}
+.hero-grid,.feature-grid{grid-template-columns:1fr}
+.hero-img{height:245px}
+.grid{grid-template-columns:1fr}
+.card img{height:220px}
+section{padding:48px 0}
+.fact-grid,.answers{grid-template-columns:1fr}
+.feature-img{height:240px}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap nav">
+<a class="brand" href="#home">EXPLORE <span>WONDERSPACE</span><small>JOURNEY THROUGH PREHISTORY</small></a>
+<button class="menu" id="menuBtn" aria-expanded="false">☰ Menu</button>
+<nav class="links" id="navLinks">
+<a href="#discover">Discover</a>
+<a href="#fossils">Fossils</a>
+<a href="#timeline">Timeline</a>
+<a href="#facts">Amazing Facts</a>
+<a href="#quiz">Quiz</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="wrap hero-grid">
+<div>
+<div class="eyebrow">Millions of years of history</div>
+<h1>Step Into the <span>Age of Dinosaurs</span></h1>
+<p class="lead">Discover incredible prehistoric creatures, explore ancient worlds, and uncover the scientific clues that reveal Earth's amazing past.</p>
+<div class="actions">
+<a class="btn primary" href="#discover">Start Exploring ↗</a>
+<a class="btn" href="#timeline">Explore the Timeline</a>
+</div>
+<div class="stats">
+<div class="stat"><strong>230M+</strong><span>Years since dinosaurs appeared</span></div>
+<div class="stat"><strong>3</strong><span>Main Mesozoic periods</span></div>
+<div class="stat"><strong>100%</strong><span>Curiosity encouraged</span></div>
+</div>
+</div>
+<img class="hero-img" src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=1000&q=85" alt="Dramatic ancient landscape">
+</div>
+</section>
+
+<section id="discover">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">Explore the ancient world</div>
+<h2>Meet the Giants of Prehistory</h2>
+<p>From mighty hunters to enormous plant-eaters, discover the animals that once lived on Earth.</p>
+</div>
+<div class="grid">
+<article class="card">
+<img src="https://images.unsplash.com/photo-1609397754447-9c7c7b6f7f6b?auto=format&fit=crop&w=900&q=80" alt="Prehistoric animal exhibit" loading="lazy">
+<div class="card-body"><span class="tag">Famous predator</span><h3>Tyrannosaurus rex</h3><p>T. rex lived during the Late Cretaceous. It had powerful jaws, sharp teeth and a strong sense of smell.</p><a class="read" href="#facts">Discover more →</a></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80" alt="Dense green forest" loading="lazy">
+<div class="card-body"><span class="tag">Plant-eaters</span><h3>Long-Necked Giants</h3><p>Some sauropods grew enormously large and used their long necks to reach vegetation.</p><a class="read" href="#timeline">Travel through time →</a></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Mountain landscape" loading="lazy">
+<div class="card-body"><span class="tag">Ancient habitats</span><h3>A World Transformed</h3><p>Earth's changing landscapes and climates shaped the habitats of prehistoric animals.</p><a class="read" href="#timeline">Explore the timeline →</a></div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="feature" id="fossils">
+<div class="wrap feature-grid">
+<div>
+<div class="kicker">Clues from the past</div>
+<h2>Fossils: Earth's Time Capsules</h2>
+<p class="muted">Fossils preserve remains or traces of ancient life. Scientists study them to learn about extinct species and long-lost environments.</p>
+<ul class="points">
+<li><b>Fossil bones:</b> reveal clues about body structure.</li>
+<li><b>Footprints:</b> provide evidence of movement.</li>
+<li><b>Fossil plants:</b> help reconstruct ancient habitats.</li>
+<li><b>New discoveries:</b> improve our understanding of history.</li>
+</ul>
+<a class="btn primary" href="#facts">Explore the Evidence</a>
+</div>
+<img class="feature-img" src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=85" alt="Natural history exhibit" loading="lazy">
+</div>
+</section>
+
+<section id="timeline">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">A journey through deep time</div>
+<h2>The Mesozoic Era</h2>
+<p>The Mesozoic Era is divided into three periods. The dates below are approximate.</p>
+</div>
+<div class="timeline">
+<div class="event"><strong>Triassic Period · 252–201 million years ago</strong><p>Early dinosaurs appeared during the Triassic, alongside many other animal groups.</p></div>
+<div class="event"><strong>Jurassic Period · 201–145 million years ago</strong><p>Dinosaurs diversified, and some of the largest land animals lived during this time.</p></div>
+<div class="event"><strong>Cretaceous Period · 145–66 million years ago</strong><p>Many well-known dinosaurs lived during this period before the end-Cretaceous extinction.</p></div>
+<div class="event"><strong>About 66 million years ago</strong><p>A large asteroid impact contributed to the extinction of all non-avian dinosaurs. Birds are living avian dinosaurs.</p></div>
+</div>
+</div>
+</section>
+
+<section id="facts">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">Science is full of surprises</div>
+<h2>Amazing Prehistoric Facts</h2>
+<p>Discover how scientists investigate the ancient world.</p>
+</div>
+<div class="fact-grid">
+<div class="fact"><b>🪶 Birds are dinosaurs</b><p>Modern birds evolved from theropod dinosaurs and are their living descendants.</p></div>
+<div class="fact"><b>🌋 Earth kept changing</b><p>Continents moved, climates changed and new environments developed over millions of years.</p></div>
+<div class="fact"><b>🦴 Fossils tell stories</b><p>Bones and footprints help researchers investigate extinct animals.</p></div>
+<div class="fact"><b>🔬 Science keeps discovering</b><p>New fossils and research methods continually improve our knowledge.</p></div>
+</div>
+</div>
+</section>
+
+<section class="feature" id="quiz">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">Test your knowledge</div>
+<h2>The WonderSpace Quiz</h2>
+<p>Choose the correct answer and test what you have learned.</p>
+</div>
+<div class="quiz">
+<h3 id="question"></h3>
+<div class="answers" id="answers"></div>
+<p id="result" aria-live="polite"></p>
+<button class="btn primary" id="next" hidden>Next Question →</button>
+<p class="muted" id="score"></p>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap footer-row">
+<div><a class="brand" href="#home">EXPLORE <span>WONDERSPACE</span></a><p>A little curiosity opens a universe of discovery.</p></div>
+<div><p>Educational Website · Explore Responsibly</p><p>Made by <strong>Lisan Sarkar</strong></p></div>
+</div>
+</footer>
+
+<button class="top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{
+ const open=navLinks.classList.toggle('open');
+ menuBtn.setAttribute('aria-expanded',String(open));
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+ navLinks.classList.remove('open');
+ menuBtn.setAttribute('aria-expanded','false');
+}));
+
+const questions=[
+ {q:"1. During which period did Tyrannosaurus rex live?",a:["Triassic","Jurassic","Cretaceous","Permian"],c:2,e:"Correct! T. rex lived during the Late Cretaceous."},
+ {q:"2. What preserves evidence of ancient life?",a:["Fossils","Clouds","Comets","Rainbows"],c:0,e:"Correct! Fossils preserve evidence of ancient life."},
+ {q:"3. Which living animals are avian dinosaurs?",a:["Frogs","Birds","Sharks","Lizards"],c:1,e:"Correct! Birds are living avian dinosaurs."},
+ {q:"4. When did non-avian dinosaurs go extinct?",a:["6,000 years ago","1 million years ago","About 66 million years ago","1 billion years ago"],c:2,e:"Correct! The extinction occurred about 66 million years ago."}
+];
+let current=0,points=0,answered=false;
+const question=document.getElementById('question');
+const answers=document.getElementById('answers');
+const result=document.getElementById('result');
+const next=document.getElementById('next');
+const score=document.getElementById('score');
+
+function renderQuestion(){
+ const item=questions[current];
+ question.textContent=item.q;
+ answers.innerHTML='';
+ item.a.forEach((label,index)=>{
+  const button=document.createElement('button');
+  button.textContent=String.fromCharCode(65+index)+'. '+label;
+  button.addEventListener('click',()=>choose(index));
+  answers.appendChild(button);
+ });
+ result.textContent='';
+ next.hidden=true;
+ score.textContent='Question '+(current+1)+' of '+questions.length;
+ answered=false;
+}
+function choose(index){
+ if(answered)return;
+ answered=true;
+ const item=questions[current];
+ answers.querySelectorAll('button').forEach(button=>button.disabled=true);
+ if(index===item.c){
+  points++;
+  result.textContent='✓ '+item.e;
+ }else{
+  result.textContent='Not quite. '+item.e;
+ }
+ score.textContent='Score: '+points+' / '+questions.length;
+ next.hidden=false;
+ next.textContent=current===questions.length-1?'See Final Score →':'Next Question →';
+}
+next.addEventListener('click',()=>{
+ if(current<questions.length-1){
+  current++;
+  renderQuestion();
+ }else{
+  question.textContent='Your adventure is complete!';
+  answers.innerHTML='';
+  result.textContent='You scored '+points+' out of '+questions.length+'!';
+  score.textContent='Thanks for exploring WonderSpace!';
+  next.hidden=true;
+ }
+});
+renderQuestion();
+</script>
+</body>
+</html>
