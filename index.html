@@ -3,295 +3,651 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#071b2b">
-<meta name="description" content="Explore dinosaurs, fossils and prehistoric life with Explore WonderSpace.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d1b">
+<meta name="description" content="Explore dinosaurs, fossils, prehistoric life and ancient Earth with Explore WonderSpace.">
 <title>Explore WonderSpace | Made by Lisan Sarkar</title>
+
 <style>
-:root{--bg:#071b2b;--panel:#102b3d;--text:#f1f8fa;--muted:#b4c8d2;--teal:#5eead4;--gold:#ffd166}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:5;background:#071b2bf2;border-bottom:1px solid #ffffff20}
-.nav{min-height:72px;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.brand{font-size:18px;font-weight:900}
-.brand span{color:var(--teal)}
-.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted)}
-.links{display:flex;gap:20px;font-size:14px;color:var(--muted)}
-.links a:hover{color:var(--teal)}
-.menu{display:none;background:transparent;color:white;border:1px solid #ffffff30;border-radius:8px;padding:8px}
-.hero{padding:70px 0;background:radial-gradient(ellipse at 80% 20%,#174d5a,transparent 45%),linear-gradient(135deg,#071b2b,#103748)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
-.eyebrow,.kicker,.tag{color:var(--teal);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800}
-h1{font-size:clamp(38px,6vw,66px);line-height:1.1;letter-spacing:-2px;margin:15px 0}
-h1 span{color:var(--teal)}
-.lead{font-size:17px;color:var(--muted);max-width:570px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.btn{display:inline-block;padding:12px 18px;border:1px solid #ffffff30;border-radius:10px;font-weight:bold}
-.primary{background:var(--teal);color:#06212b;border-color:var(--teal)}
-.hero-img{width:100%;height:340px;object-fit:cover;border-radius:22px;border:1px solid #ffffff25}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
-.stat{border-left:2px solid var(--teal);padding-left:12px}
-.stat strong{display:block;font-size:22px}
-.stat span{font-size:12px;color:var(--muted)}
-section{padding:65px 0}
-.section-head{max-width:700px;margin-bottom:28px}
-h2{font-size:clamp(28px,4vw,42px);line-height:1.2;margin:10px 0}
-.muted,.section-head p{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--panel);border:1px solid #ffffff18;border-radius:16px;overflow:hidden;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:#5eead477}
-.card img{width:100%;height:200px;object-fit:cover;display:block;background:#15384a}
-.card-body{padding:18px}
-.tag{font-size:10px;letter-spacing:1px}
-h3{margin:8px 0}
-.card p,.fact p{color:var(--muted);font-size:14px}
-.read{display:inline-block;margin-top:10px;color:var(--gold);font-weight:bold;font-size:13px}
-.feature{background:linear-gradient(120deg,#103345,#0a2435);border-top:1px solid #ffffff15;border-bottom:1px solid #ffffff15}
-.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
-.feature-img{width:100%;height:320px;object-fit:cover;border-radius:18px}
-.points{padding-left:20px;color:var(--muted)}
-.points li{margin:10px 0}
-.timeline{border-left:2px solid #2b6370;margin:25px 0 0 8px;padding-left:24px}
-.event{position:relative;padding-bottom:22px}
-.event:before{content:"";position:absolute;left:-31px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--teal)}
-.event strong{color:var(--gold)}
-.event p{color:var(--muted);margin:5px 0}
-.fact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.fact{background:var(--panel);border:1px solid #ffffff18;border-radius:14px;padding:20px}
-.fact b{color:var(--teal)}
-.quiz{max-width:760px;background:var(--panel);padding:24px;border:1px solid #ffffff20;border-radius:18px}
-.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.answers button{background:#15384a;color:white;border:1px solid #ffffff20;border-radius:9px;padding:12px;text-align:left;cursor:pointer}
-.answers button:hover{border-color:var(--teal)}
-.answers button:disabled{opacity:.8}
-#result{color:var(--teal);font-weight:bold;min-height:30px}
-footer{padding:30px 0;border-top:1px solid #ffffff20;background:#051521}
-.footer-row{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
-footer p{font-size:13px;color:var(--muted)}
-footer strong{color:var(--teal)}
-.top{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border:0;border-radius:50%;background:var(--teal);font-size:21px;cursor:pointer}
-@media(max-width:760px){
-.menu{display:block}
-.links{display:none;position:absolute;top:72px;left:0;right:0;background:#071b2b;padding:18px 5%;flex-direction:column}
-.links.open{display:flex}
-.hero{padding:48px 0}
-.hero-grid,.feature-grid{grid-template-columns:1fr}
-.hero-img{height:245px}
-.grid{grid-template-columns:1fr}
-.card img{height:220px}
-section{padding:48px 0}
-.fact-grid,.answers{grid-template-columns:1fr}
-.feature-img{height:240px}
+:root {
+  --bg:#080d1b;
+  --panel:#111a2e;
+  --panel2:#192640;
+  --text:#f4f7ff;
+  --muted:#aab6ca;
+  --green:#66f0b5;
+  --blue:#73c8ff;
+  --purple:#b7a0ff;
+  --border:rgba(255,255,255,.12);
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:85px; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.7;
+}
+a { color:inherit; text-decoration:none; }
+button,input,select { font:inherit; }
+button { cursor:pointer; }
+.container { width:min(1120px,92%); margin:auto; }
+header {
+  position:sticky; top:0; z-index:100;
+  background:rgba(8,13,27,.96);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(15px);
+}
+.navbar {
+  min-height:72px; display:flex;
+  justify-content:space-between; align-items:center;
+  gap:20px;
+}
+.logo { font-size:1.2rem; font-weight:800; }
+.logo span { color:var(--green); }
+.nav-links { display:flex; gap:22px; align-items:center; }
+.nav-links a { color:var(--muted); font-size:.92rem; }
+.nav-links a:hover { color:var(--green); }
+.menu-button {
+  display:none; background:var(--panel); color:var(--text);
+  border:1px solid var(--border); border-radius:10px; padding:8px 12px;
+}
+.hero {
+  display:grid; grid-template-columns:1.1fr .9fr;
+  align-items:center; gap:35px; padding:75px 0;
+  min-height:540px;
+}
+.eyebrow {
+  display:inline-block; color:var(--green);
+  background:rgba(102,240,181,.09);
+  border:1px solid rgba(102,240,181,.23);
+  border-radius:30px; padding:5px 13px;
+  font-size:.8rem; margin-bottom:18px;
+}
+h1 { font-size:clamp(2.6rem,6vw,4.8rem); line-height:1.1; letter-spacing:-2px; }
+.gradient {
+  background:linear-gradient(100deg,var(--green),var(--blue),var(--purple));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero p { color:var(--muted); max-width:560px; margin:22px 0 26px; }
+.button-row { display:flex; flex-wrap:wrap; gap:12px; }
+.btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:11px; padding:11px 18px;
+  border:1px solid var(--border); font-weight:bold;
+  transition:transform .2s;
+}
+.btn:hover { transform:translateY(-2px); }
+.primary { background:var(--green); color:#07150f; border-color:var(--green); }
+.secondary { background:var(--panel); color:var(--text); }
+.hero-art {
+  min-height:330px; border:1px solid var(--border);
+  border-radius:28px; display:flex; align-items:center;
+  justify-content:center; position:relative; overflow:hidden;
+  background:radial-gradient(circle at 50% 40%,#253b5b,#15152b 65%,#0c1222);
+}
+.hero-art:before,.hero-art:after {
+  content:""; position:absolute; border:1px solid #66f0b533;
+  width:250px; height:250px; border-radius:50%;
+}
+.hero-art:after { width:320px; height:320px; border-color:#73c8ff22; }
+.hero-dino { font-size:clamp(8rem,18vw,13rem); z-index:1; animation:float 4s ease-in-out infinite; }
+@keyframes float { 50% { transform:translateY(-12px) rotate(3deg); } }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; padding-bottom:35px; }
+.stat { background:var(--panel); border:1px solid var(--border); border-radius:15px; text-align:center; padding:18px; }
+.stat strong { display:block; color:var(--green); font-size:1.7rem; }
+.stat span { color:var(--muted); font-size:.85rem; }
+.section { padding:65px 0; }
+.section-heading { margin-bottom:25px; }
+.section-heading h2 { font-size:clamp(1.8rem,4vw,2.7rem); line-height:1.25; }
+.section-heading p { color:var(--muted); margin-top:8px; }
+.tools { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:22px; }
+.tools input,.tools select {
+  background:var(--panel); color:var(--text);
+  border:1px solid var(--border); border-radius:10px;
+  padding:12px; outline:none;
+}
+.tools input { flex:1; min-width:180px; }
+.tools select { min-width:145px; }
+.dino-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.dino-card {
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:16px; overflow:hidden; transition:.2s;
+}
+.dino-card:hover { transform:translateY(-4px); border-color:#66f0b577; }
+.dino-image {
+  min-height:155px; display:flex; align-items:center;
+  justify-content:center; font-size:5rem;
+  background:radial-gradient(circle,#293e5c,#151b30);
+}
+.dino-info { padding:18px; }
+.dino-info h3 { font-size:1.15rem; }
+.dino-info p { color:var(--muted); font-size:.91rem; }
+.tag {
+  display:inline-block; color:var(--green);
+  background:#66f0b516; padding:3px 9px;
+  border-radius:6px; font-size:.76rem; margin:8px 0;
+}
+.card-actions { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:13px; }
+.small-button {
+  background:var(--panel2); color:var(--text);
+  border:1px solid var(--border); border-radius:8px; padding:7px 10px;
+}
+.small-button:hover { border-color:var(--green); }
+.empty { display:none; text-align:center; color:var(--muted); padding:25px; }
+.feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }
+.feature-card {
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:15px; padding:22px;
+}
+.feature-icon { font-size:2.2rem; }
+.feature-card h3 { margin:8px 0; }
+.feature-card p { color:var(--muted); font-size:.92rem; }
+.timeline { border-left:2px solid #66f0b566; margin-left:12px; padding-left:25px; }
+.timeline-item { position:relative; padding-bottom:26px; }
+.timeline-item:before {
+  content:""; position:absolute; width:12px; height:12px;
+  background:var(--green); border-radius:50%; left:-32px; top:8px;
+}
+.timeline-item h3 { color:var(--green); }
+.timeline-item p { color:var(--muted); }
+.gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.gallery-item {
+  min-height:150px; display:flex; align-items:center;
+  justify-content:center; font-size:4rem;
+  background:linear-gradient(145deg,#192b47,#17172d);
+  border:1px solid var(--border); border-radius:15px;
+}
+.fact-box {
+  text-align:center; padding:30px; border-radius:18px;
+  background:linear-gradient(130deg,#12253a,#19152e);
+  border:1px solid #73c8ff44;
+}
+.fact-box p { color:var(--muted); margin:12px auto 20px; max-width:650px; }
+.quiz-box { max-width:750px; margin:auto; padding:25px; background:var(--panel); border:1px solid var(--border); border-radius:18px; }
+.quiz-question { font-size:1.18rem; font-weight:bold; margin-bottom:15px; }
+.quiz-options { display:grid; gap:10px; }
+.quiz-option {
+  width:100%; text-align:left; color:var(--text);
+  background:var(--panel2); border:1px solid var(--border);
+  border-radius:10px; padding:12px;
+}
+.quiz-option:hover { border-color:var(--green); }
+.quiz-option:disabled { cursor:default; opacity:.85; }
+.quiz-feedback { min-height:28px; margin-top:12px; color:var(--green); }
+.quiz-controls { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-top:18px; }
+footer { border-top:1px solid var(--border); margin-top:35px; padding:32px 0; text-align:center; color:var(--muted); }
+footer strong { color:var(--green); }
+footer p+p { margin-top:5px; font-size:.9rem; }
+@media(max-width:800px) {
+  .hero { grid-template-columns:1fr; padding:50px 0; }
+  .hero-art { min-height:280px; }
+  .dino-grid,.feature-grid { grid-template-columns:repeat(2,1fr); }
+  .menu-button { display:block; }
+  .nav-links {
+    display:none; position:absolute; top:72px; left:0; right:0;
+    padding:18px 4%; background:var(--bg);
+    border-bottom:1px solid var(--border);
+    flex-direction:column; align-items:flex-start;
+  }
+  .nav-links.open { display:flex; }
+}
+@media(max-width:520px) {
+  .dino-grid,.feature-grid,.gallery-grid,.stats { grid-template-columns:1fr; }
+  h1 { letter-spacing:-1px; }
+  .section { padding:45px 0; }
 }
 </style>
 </head>
+
 <body>
 <header>
-<div class="wrap nav">
-<a class="brand" href="#home">EXPLORE <span>WONDERSPACE</span><small>JOURNEY THROUGH PREHISTORY</small></a>
-<button class="menu" id="menuBtn" aria-expanded="false">☰ Menu</button>
-<nav class="links" id="navLinks">
-<a href="#discover">Discover</a>
-<a href="#fossils">Fossils</a>
-<a href="#timeline">Timeline</a>
-<a href="#facts">Amazing Facts</a>
-<a href="#quiz">Quiz</a>
-</nav>
-</div>
+  <div class="container navbar">
+    <a href="#home" class="logo">Explore <span>WonderSpace</span></a>
+    <button class="menu-button" id="menuButton" aria-expanded="false">☰ Menu</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#dinosaurs">Dinosaurs</a>
+      <a href="#discover">Discover</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+  </div>
 </header>
 
 <main>
-<section class="hero" id="home">
-<div class="wrap hero-grid">
-<div>
-<div class="eyebrow">Millions of years of history</div>
-<h1>Step Into the <span>Age of Dinosaurs</span></h1>
-<p class="lead">Discover incredible prehistoric creatures, explore ancient worlds, and uncover the scientific clues that reveal Earth's amazing past.</p>
-<div class="actions">
-<a class="btn primary" href="#discover">Start Exploring ↗</a>
-<a class="btn" href="#timeline">Explore the Timeline</a>
-</div>
-<div class="stats">
-<div class="stat"><strong>230M+</strong><span>Years since dinosaurs appeared</span></div>
-<div class="stat"><strong>3</strong><span>Main Mesozoic periods</span></div>
-<div class="stat"><strong>100%</strong><span>Curiosity encouraged</span></div>
-</div>
-</div>
-<img class="hero-img" src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=1000&q=85" alt="Dramatic ancient landscape">
-</div>
+<section class="container hero" id="home">
+  <div>
+    <span class="eyebrow">YOUR PREHISTORIC ADVENTURE</span>
+    <h1>Discover a World <span class="gradient">Lost in Time</span></h1>
+    <p>Travel millions of years into Earth's past. Meet legendary dinosaurs, discover ancient fossils and explore the extraordinary history of prehistoric life.</p>
+    <div class="button-row">
+      <a class="btn primary" href="#dinosaurs">Explore Dinosaurs ↗</a>
+      <a class="btn secondary" href="#quiz">Take the Quiz</a>
+    </div>
+  </div>
+  <div class="hero-art" aria-label="Dinosaur illustration">
+    <div class="hero-dino">🦖</div>
+  </div>
 </section>
 
-<section id="discover">
-<div class="wrap">
-<div class="section-head">
-<div class="kicker">Explore the ancient world</div>
-<h2>Meet the Giants of Prehistory</h2>
-<p>From mighty hunters to enormous plant-eaters, discover the animals that once lived on Earth.</p>
-</div>
-<div class="grid">
-<article class="card">
-<img src="https://images.unsplash.com/photo-1609397754447-9c7c7b6f7f6b?auto=format&fit=crop&w=900&q=80" alt="Prehistoric animal exhibit" loading="lazy">
-<div class="card-body"><span class="tag">Famous predator</span><h3>Tyrannosaurus rex</h3><p>T. rex lived during the Late Cretaceous. It had powerful jaws, sharp teeth and a strong sense of smell.</p><a class="read" href="#facts">Discover more →</a></div>
-</article>
-<article class="card">
-<img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80" alt="Dense green forest" loading="lazy">
-<div class="card-body"><span class="tag">Plant-eaters</span><h3>Long-Necked Giants</h3><p>Some sauropods grew enormously large and used their long necks to reach vegetation.</p><a class="read" href="#timeline">Travel through time →</a></div>
-</article>
-<article class="card">
-<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Mountain landscape" loading="lazy">
-<div class="card-body"><span class="tag">Ancient habitats</span><h3>A World Transformed</h3><p>Earth's changing landscapes and climates shaped the habitats of prehistoric animals.</p><a class="read" href="#timeline">Explore the timeline →</a></div>
-</article>
-</div>
-</div>
+<section class="container stats">
+  <div class="stat"><strong>230M+</strong><span>Years Since Early Dinosaurs</span></div>
+  <div class="stat"><strong>3</strong><span>Major Dinosaur Periods</span></div>
+  <div class="stat"><strong>65M+</strong><span>Years Since Non-avian Dinosaurs</span></div>
 </section>
 
-<section class="feature" id="fossils">
-<div class="wrap feature-grid">
-<div>
-<div class="kicker">Clues from the past</div>
-<h2>Fossils: Earth's Time Capsules</h2>
-<p class="muted">Fossils preserve remains or traces of ancient life. Scientists study them to learn about extinct species and long-lost environments.</p>
-<ul class="points">
-<li><b>Fossil bones:</b> reveal clues about body structure.</li>
-<li><b>Footprints:</b> provide evidence of movement.</li>
-<li><b>Fossil plants:</b> help reconstruct ancient habitats.</li>
-<li><b>New discoveries:</b> improve our understanding of history.</li>
-</ul>
-<a class="btn primary" href="#facts">Explore the Evidence</a>
-</div>
-<img class="feature-img" src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=85" alt="Natural history exhibit" loading="lazy">
-</div>
+<section class="container section" id="dinosaurs">
+  <div class="section-heading">
+    <span class="eyebrow">MEET THE GIANTS</span>
+    <h2>Explore Dinosaurs</h2>
+    <p>Search, filter and learn about some of the best-known dinosaurs.</p>
+  </div>
+  <div class="tools">
+    <input type="search" id="searchInput" placeholder="Search dinosaurs..." aria-label="Search dinosaurs">
+    <select id="periodFilter" aria-label="Filter by period">
+      <option value="all">All Periods</option>
+      <option value="Triassic">Triassic</option>
+      <option value="Jurassic">Jurassic</option>
+      <option value="Cretaceous">Cretaceous</option>
+    </select>
+    <select id="dietFilter" aria-label="Filter by diet">
+      <option value="all">All Diets</option>
+      <option value="Carnivore">Carnivore</option>
+      <option value="Herbivore">Herbivore</option>
+      <option value="Omnivore">Omnivore</option>
+    </select>
+    <button class="btn secondary" id="favoritesOnly">♡ Favorites</button>
+  </div>
+  <div class="dino-grid" id="dinoGrid"></div>
+  <p class="empty" id="emptyState">No dinosaurs found. Try another search or filter.</p>
 </section>
 
-<section id="timeline">
-<div class="wrap">
-<div class="section-head">
-<div class="kicker">A journey through deep time</div>
-<h2>The Mesozoic Era</h2>
-<p>The Mesozoic Era is divided into three periods. The dates below are approximate.</p>
-</div>
-<div class="timeline">
-<div class="event"><strong>Triassic Period · 252–201 million years ago</strong><p>Early dinosaurs appeared during the Triassic, alongside many other animal groups.</p></div>
-<div class="event"><strong>Jurassic Period · 201–145 million years ago</strong><p>Dinosaurs diversified, and some of the largest land animals lived during this time.</p></div>
-<div class="event"><strong>Cretaceous Period · 145–66 million years ago</strong><p>Many well-known dinosaurs lived during this period before the end-Cretaceous extinction.</p></div>
-<div class="event"><strong>About 66 million years ago</strong><p>A large asteroid impact contributed to the extinction of all non-avian dinosaurs. Birds are living avian dinosaurs.</p></div>
-</div>
-</div>
+<section class="container section" id="discover">
+  <div class="section-heading">
+    <span class="eyebrow">GO BEYOND THE BONES</span>
+    <h2>Discover the Ancient World</h2>
+    <p>Explore the clues scientists use to understand life on ancient Earth.</p>
+  </div>
+  <div class="feature-grid">
+    <article class="feature-card">
+      <div class="feature-icon">🦴</div>
+      <h3>Fossil Discoveries</h3>
+      <p>Fossils preserve evidence of ancient organisms, including bones, teeth, footprints and impressions.</p>
+    </article>
+    <article class="feature-card">
+      <div class="feature-icon">🌋</div>
+      <h3>Ancient Earth</h3>
+      <p>Earth's landscapes and climates changed dramatically over geological time.</p>
+    </article>
+    <article class="feature-card">
+      <div class="feature-icon">🔬</div>
+      <h3>Science in Action</h3>
+      <p>Palaeontologists compare fossils, rocks and geological evidence to reconstruct ancient ecosystems.</p>
+    </article>
+    <article class="feature-card">
+      <div class="feature-icon">🌿</div>
+      <h3>Prehistoric Plants</h3>
+      <p>Ferns, conifers and other plants formed important parts of many ancient ecosystems.</p>
+    </article>
+    <article class="feature-card">
+      <div class="feature-icon">🪺</div>
+      <h3>Eggs and Nests</h3>
+      <p>Fossil eggs and nesting sites can provide clues about dinosaur reproduction and behaviour.</p>
+    </article>
+    <article class="feature-card">
+      <div class="feature-icon">🪶</div>
+      <h3>Bird Connections</h3>
+      <p>Modern birds are living descendants of theropod dinosaurs, making dinosaurs part of today's world.</p>
+    </article>
+  </div>
 </section>
 
-<section id="facts">
-<div class="wrap">
-<div class="section-head">
-<div class="kicker">Science is full of surprises</div>
-<h2>Amazing Prehistoric Facts</h2>
-<p>Discover how scientists investigate the ancient world.</p>
-</div>
-<div class="fact-grid">
-<div class="fact"><b>🪶 Birds are dinosaurs</b><p>Modern birds evolved from theropod dinosaurs and are their living descendants.</p></div>
-<div class="fact"><b>🌋 Earth kept changing</b><p>Continents moved, climates changed and new environments developed over millions of years.</p></div>
-<div class="fact"><b>🦴 Fossils tell stories</b><p>Bones and footprints help researchers investigate extinct animals.</p></div>
-<div class="fact"><b>🔬 Science keeps discovering</b><p>New fossils and research methods continually improve our knowledge.</p></div>
-</div>
-</div>
+<section class="container section" id="timeline">
+  <div class="section-heading">
+    <span class="eyebrow">A JOURNEY THROUGH TIME</span>
+    <h2>The Prehistoric Timeline</h2>
+    <p>Explore the three periods of the Mesozoic Era.</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Triassic Period · About 252–201 million years ago</h3>
+      <p>Early dinosaurs appeared during the Triassic. The continents were arranged very differently from today.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Jurassic Period · About 201–145 million years ago</h3>
+      <p>Many dinosaurs diversified. Giant long-necked sauropods and numerous other dinosaur groups flourished.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Cretaceous Period · About 145–66 million years ago</h3>
+      <p>Dinosaurs such as Tyrannosaurus and Triceratops lived during this period, which ended with a mass extinction.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Today · The Age of Living Birds</h3>
+      <p>Birds are the surviving dinosaur lineage. Palaeontologists continue discovering new evidence about their ancestors.</p>
+    </div>
+  </div>
 </section>
 
-<section class="feature" id="quiz">
-<div class="wrap">
-<div class="section-head">
-<div class="kicker">Test your knowledge</div>
-<h2>The WonderSpace Quiz</h2>
-<p>Choose the correct answer and test what you have learned.</p>
-</div>
-<div class="quiz">
-<h3 id="question"></h3>
-<div class="answers" id="answers"></div>
-<p id="result" aria-live="polite"></p>
-<button class="btn primary" id="next" hidden>Next Question →</button>
-<p class="muted" id="score"></p>
-</div>
-</div>
+<section class="container section" id="gallery">
+  <div class="section-heading">
+    <span class="eyebrow">VISUAL EXPLORATION</span>
+    <h2>Prehistoric Gallery</h2>
+    <p>A colourful collection of prehistoric-themed illustrations.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" role="img" aria-label="Tyrannosaurus illustration">🦖</div>
+    <div class="gallery-item" role="img" aria-label="Fossil illustration">🦴</div>
+    <div class="gallery-item" role="img" aria-label="Volcano illustration">🌋</div>
+    <div class="gallery-item" role="img" aria-label="Fern illustration">🌿</div>
+    <div class="gallery-item" role="img" aria-label="Flying prehistoric reptile illustration">🦅</div>
+    <div class="gallery-item" role="img" aria-label="Dinosaur egg illustration">🥚</div>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="fact-box">
+    <span class="eyebrow">DID YOU KNOW?</span>
+    <h2>Discover a Random Fact</h2>
+    <p id="factText">Some dinosaurs had feathers, and modern birds evolved from theropod dinosaurs.</p>
+    <button class="btn primary" id="factButton">Another Fact ✨</button>
+  </div>
+</section>
+
+<section class="container section" id="quiz">
+  <div class="section-heading">
+    <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+    <h2>Dinosaur Quiz</h2>
+    <p>Answer the questions and see how much you've learned.</p>
+  </div>
+  <div class="quiz-box">
+    <div id="quizProgress">Question 1</div>
+    <div class="quiz-question" id="quizQuestion"></div>
+    <div class="quiz-options" id="quizOptions"></div>
+    <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+    <div class="quiz-controls">
+      <span id="quizScore">Score: 0</span>
+      <button class="btn primary" id="nextQuestion">Next Question →</button>
+    </div>
+  </div>
 </section>
 </main>
 
 <footer>
-<div class="wrap footer-row">
-<div><a class="brand" href="#home">EXPLORE <span>WONDERSPACE</span></a><p>A little curiosity opens a universe of discovery.</p></div>
-<div><p>Educational Website · Explore Responsibly</p><p>Made by <strong>Lisan Sarkar</strong></p></div>
-</div>
+  <div class="container">
+    <p>Explore WonderSpace — Discover the wonders of prehistoric life.</p>
+    <p>Made by <strong>Lisan Sarkar</strong></p>
+    <p>© <span id="year"></span> Explore WonderSpace. Educational project.</p>
+    <p>Built for curious minds and future explorers.</p>
+    <p><a href="#home">Back to top ↑</a></p>
+  </div>
 </footer>
 
-<button class="top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
-
 <script>
-const menuBtn=document.getElementById('menuBtn');
-const navLinks=document.getElementById('navLinks');
-menuBtn.addEventListener('click',()=>{
- const open=navLinks.classList.toggle('open');
- menuBtn.setAttribute('aria-expanded',String(open));
-});
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
- navLinks.classList.remove('open');
- menuBtn.setAttribute('aria-expanded','false');
-}));
+"use strict";
 
-const questions=[
- {q:"1. During which period did Tyrannosaurus rex live?",a:["Triassic","Jurassic","Cretaceous","Permian"],c:2,e:"Correct! T. rex lived during the Late Cretaceous."},
- {q:"2. What preserves evidence of ancient life?",a:["Fossils","Clouds","Comets","Rainbows"],c:0,e:"Correct! Fossils preserve evidence of ancient life."},
- {q:"3. Which living animals are avian dinosaurs?",a:["Frogs","Birds","Sharks","Lizards"],c:1,e:"Correct! Birds are living avian dinosaurs."},
- {q:"4. When did non-avian dinosaurs go extinct?",a:["6,000 years ago","1 million years ago","About 66 million years ago","1 billion years ago"],c:2,e:"Correct! The extinction occurred about 66 million years ago."}
+const dinosaurs = [
+  {name:"Tyrannosaurus rex",period:"Cretaceous",diet:"Carnivore",emoji:"🦖",years:"68–66 million years ago",description:"A powerful predator with strong jaws and a large skull."},
+  {name:"Triceratops",period:"Cretaceous",diet:"Herbivore",emoji:"🦕",years:"About 68–66 million years ago",description:"A plant-eater recognised by its three facial horns and large frill."},
+  {name:"Stegosaurus",period:"Jurassic",diet:"Herbivore",emoji:"🦕",years:"About 155–150 million years ago",description:"A plant-eating dinosaur known for its back plates and spiked tail."},
+  {name:"Velociraptor",period:"Cretaceous",diet:"Carnivore",emoji:"🦖",years:"About 75–71 million years ago",description:"A small feathered predator with a distinctive curved toe claw."},
+  {name:"Brachiosaurus",period:"Jurassic",diet:"Herbivore",emoji:"🦕",years:"About 154–150 million years ago",description:"A large sauropod with long forelimbs and a long neck."},
+  {name:"Spinosaurus",period:"Cretaceous",diet:"Carnivore",emoji:"🦖",years:"About 100–94 million years ago",description:"A large predator with a distinctive sail-like structure on its back."},
+  {name:"Allosaurus",period:"Jurassic",diet:"Carnivore",emoji:"🦖",years:"About 155–145 million years ago",description:"A large Jurassic predator with sharp teeth and powerful hind limbs."},
+  {name:"Ankylosaurus",period:"Cretaceous",diet:"Herbivore",emoji:"🦕",years:"About 68–66 million years ago",description:"An armoured dinosaur with a bony tail club."},
+  {name:"Parasaurolophus",period:"Cretaceous",diet:"Herbivore",emoji:"🦕",years:"About 76–73 million years ago",description:"A plant-eater with a long, backward-curving head crest."},
+  {name:"Dilophosaurus",period:"Jurassic",diet:"Carnivore",emoji:"🦖",years:"About 193 million years ago",description:"An early Jurassic predator with two distinctive head crests."},
+  {name:"Plateosaurus",period:"Triassic",diet:"Herbivore",emoji:"🦕",years:"About 214–204 million years ago",description:"An early long-necked dinosaur that lived during the Triassic."},
+  {name:"Coelophysis",period:"Triassic",diet:"Carnivore",emoji:"🦖",years:"About 216–203 million years ago",description:"A slender, lightly built early dinosaur."}
 ];
-let current=0,points=0,answered=false;
-const question=document.getElementById('question');
-const answers=document.getElementById('answers');
-const result=document.getElementById('result');
-const next=document.getElementById('next');
-const score=document.getElementById('score');
 
-function renderQuestion(){
- const item=questions[current];
- question.textContent=item.q;
- answers.innerHTML='';
- item.a.forEach((label,index)=>{
-  const button=document.createElement('button');
-  button.textContent=String.fromCharCode(65+index)+'. '+label;
-  button.addEventListener('click',()=>choose(index));
-  answers.appendChild(button);
- });
- result.textContent='';
- next.hidden=true;
- score.textContent='Question '+(current+1)+' of '+questions.length;
- answered=false;
+const grid = document.getElementById("dinoGrid");
+const searchInput = document.getElementById("searchInput");
+const periodFilter = document.getElementById("periodFilter");
+const dietFilter = document.getElementById("dietFilter");
+const favoritesButton = document.getElementById("favoritesOnly");
+const emptyState = document.getElementById("emptyState");
+
+let favorites = new Set();
+let showFavoritesOnly = false;
+
+function renderDinosaurs() {
+  const search = searchInput.value.trim().toLowerCase();
+  const period = periodFilter.value;
+  const diet = dietFilter.value;
+
+  const filtered = dinosaurs.filter(d => {
+    const matchesSearch =
+      (d.name + " " + d.description + " " + d.period + " " + d.diet)
+      .toLowerCase().includes(search);
+    const matchesPeriod = period === "all" || d.period === period;
+    const matchesDiet = diet === "all" || d.diet === diet;
+    const matchesFavorite = !showFavoritesOnly || favorites.has(d.name);
+    return matchesSearch && matchesPeriod && matchesDiet && matchesFavorite;
+  });
+
+  grid.innerHTML = filtered.map(d => `
+    <article class="dino-card">
+      <div class="dino-image" role="img" aria-label="${d.name} illustration">${d.emoji}</div>
+      <div class="dino-info">
+        <h3>${d.name}</h3>
+        <span class="tag">${d.period} · ${d.diet}</span>
+        <p>${d.description}</p>
+        <p><strong>Period:</strong> ${d.years}</p>
+        <div class="card-actions">
+          <button class="small-button favorite-button" data-name="${d.name}">
+            ${favorites.has(d.name) ? "♥ Saved" : "♡ Favorite"}
+          </button>
+          <button class="small-button detail-button" data-name="${d.name}">Learn more</button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  emptyState.style.display = filtered.length ? "none" : "block";
 }
-function choose(index){
- if(answered)return;
- answered=true;
- const item=questions[current];
- answers.querySelectorAll('button').forEach(button=>button.disabled=true);
- if(index===item.c){
-  points++;
-  result.textContent='✓ '+item.e;
- }else{
-  result.textContent='Not quite. '+item.e;
- }
- score.textContent='Score: '+points+' / '+questions.length;
- next.hidden=false;
- next.textContent=current===questions.length-1?'See Final Score →':'Next Question →';
-}
-next.addEventListener('click',()=>{
- if(current<questions.length-1){
-  current++;
-  renderQuestion();
- }else{
-  question.textContent='Your adventure is complete!';
-  answers.innerHTML='';
-  result.textContent='You scored '+points+' out of '+questions.length+'!';
-  score.textContent='Thanks for exploring WonderSpace!';
-  next.hidden=true;
- }
+
+grid.addEventListener("click", event => {
+  const favoriteButton = event.target.closest(".favorite-button");
+  const detailButton = event.target.closest(".detail-button");
+
+  if (favoriteButton) {
+    const name = favoriteButton.dataset.name;
+    if (favorites.has(name)) favorites.delete(name);
+    else favorites.add(name);
+    renderDinosaurs();
+  }
+
+  if (detailButton) {
+    const dino = dinosaurs.find(d => d.name === detailButton.dataset.name);
+    if (dino) {
+      alert(
+        dino.name + "\n\n" +
+        "Period: " + dino.period + "\n" +
+        "Diet: " + dino.diet + "\n" +
+        "Lived: " + dino.years + "\n\n" +
+        dino.description
+      );
+    }
+  }
 });
+
+searchInput.addEventListener("input", renderDinosaurs);
+periodFilter.addEventListener("change", renderDinosaurs);
+dietFilter.addEventListener("change", renderDinosaurs);
+
+favoritesButton.addEventListener("click", () => {
+  showFavoritesOnly = !showFavoritesOnly;
+  favoritesButton.textContent = showFavoritesOnly ? "♥ Show All" : "♡ Favorites";
+  renderDinosaurs();
+});
+
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
+
+menuButton.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  });
+});
+
+const facts = [
+  "Birds are living descendants of theropod dinosaurs.",
+  "Triceratops had three facial horns and a large bony frill.",
+  "Not all dinosaurs were enormous; some were relatively small.",
+  "Fossilised footprints can provide evidence about dinosaur movement.",
+  "The Mesozoic Era included the Triassic, Jurassic and Cretaceous periods.",
+  "Many dinosaur fossils have been discovered on every continent.",
+  "Some dinosaur species had feathers or feather-like coverings.",
+  "Palaeontologists study fossils to understand ancient life and environments.",
+  "The asteroid impact about 66 million years ago contributed to the extinction of non-avian dinosaurs.",
+  "Stegosaurus lived during the Jurassic Period."
+];
+
+document.getElementById("factButton").addEventListener("click", () => {
+  const factText = document.getElementById("factText");
+  let nextFact = facts[Math.floor(Math.random() * facts.length)];
+  if (facts.length > 1 && nextFact === factText.textContent) {
+    nextFact = facts[(facts.indexOf(nextFact) + 1) % facts.length];
+  }
+  factText.textContent = nextFact;
+});
+
+const questions = [
+  {
+    q:"Which dinosaur is famous for its three facial horns?",
+    options:["Stegosaurus","Triceratops","Velociraptor","Brachiosaurus"],
+    answer:1,
+    explain:"Triceratops had three facial horns and a large bony frill."
+  },
+  {
+    q:"During which period did Stegosaurus live?",
+    options:["Triassic","Jurassic","Cretaceous","Palaeogene"],
+    answer:1,
+    explain:"Stegosaurus lived during the Jurassic Period."
+  },
+  {
+    q:"Which living animals are descendants of theropod dinosaurs?",
+    options:["Birds","Frogs","Butterflies","Sharks"],
+    answer:0,
+    explain:"Modern birds evolved from theropod dinosaurs."
+  },
+  {
+    q:"What do palaeontologists study?",
+    options:["Only stars","Only volcanoes","Fossils and ancient life","Modern computers"],
+    answer:2,
+    explain:"Palaeontologists study fossils and the history of ancient life."
+  },
+  {
+    q:"Which dinosaur is known for bony plates along its back?",
+    options:["Triceratops","Stegosaurus","Tyrannosaurus rex","Coelophysis"],
+    answer:1,
+    explain:"Stegosaurus is famous for the plates along its back."
+  },
+  {
+    q:"Which is the youngest of the three Mesozoic periods?",
+    options:["Triassic","Jurassic","Cretaceous","Cambrian"],
+    answer:2,
+    explain:"The Cretaceous was the last period of the Mesozoic Era."
+  },
+  {
+    q:"What can fossil footprints tell scientists?",
+    options:["Ancient movement","Today's weather","The colour of every dinosaur","Modern traffic patterns"],
+    answer:0,
+    explain:"Trackways can reveal clues about movement and behaviour."
+  }
+];
+
+let questionIndex = 0;
+let score = 0;
+let answered = false;
+
+const quizQuestion = document.getElementById("quizQuestion");
+const quizOptions = document.getElementById("quizOptions");
+const quizFeedback = document.getElementById("quizFeedback");
+const quizProgress = document.getElementById("quizProgress");
+const quizScore = document.getElementById("quizScore");
+const nextQuestion = document.getElementById("nextQuestion");
+
+function renderQuestion() {
+  answered = false;
+  const q = questions[questionIndex];
+  quizProgress.textContent =
+    "Question " + (questionIndex + 1) + " of " + questions.length;
+  quizQuestion.textContent = q.q;
+  quizFeedback.textContent = "";
+  quizScore.textContent = "Score: " + score;
+  nextQuestion.textContent =
+    questionIndex === questions.length - 1 ? "See Results →" : "Next Question →";
+
+  quizOptions.innerHTML = q.options.map((option, i) => `
+    <button class="quiz-option" data-index="${i}">${option}</button>
+  `).join("");
+}
+
+quizOptions.addEventListener("click", event => {
+  const button = event.target.closest(".quiz-option");
+  if (!button || answered) return;
+
+  answered = true;
+  const chosen = Number(button.dataset.index);
+  const q = questions[questionIndex];
+
+  quizOptions.querySelectorAll("button").forEach((option, i) => {
+    option.disabled = true;
+    if (i === q.answer) option.style.borderColor = "#66f0b5";
+  });
+
+  if (chosen === q.answer) {
+    score++;
+    quizFeedback.textContent = "Correct! " + q.explain;
+  } else {
+    quizFeedback.textContent = "Not quite. " + q.explain;
+  }
+
+  quizScore.textContent = "Score: " + score;
+});
+
+nextQuestion.addEventListener("click", () => {
+  if (!answered) {
+    quizFeedback.textContent = "Choose an answer before continuing.";
+    return;
+  }
+
+  questionIndex++;
+
+  if (questionIndex >= questions.length) {
+    quizProgress.textContent = "Quiz completed!";
+    quizQuestion.textContent =
+      "Your final score: " + score + " out of " + questions.length;
+    quizOptions.innerHTML = "";
+    quizFeedback.textContent =
+      score === questions.length
+        ? "Excellent! You're a prehistoric life expert!"
+        : "Great effort! Explore the website and try again.";
+    nextQuestion.textContent = "Play Again ↻";
+    nextQuestion.onclick = () => {
+      questionIndex = 0;
+      score = 0;
+      nextQuestion.onclick = null;
+      renderQuestion();
+    };
+    return;
+  }
+
+  renderQuestion();
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderDinosaurs();
 renderQuestion();
 </script>
 </body>
